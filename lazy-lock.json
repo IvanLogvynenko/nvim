@@ -1,0 +1,5 @@
+{
+  "aura-theme": { "branch": "feat/neovim-port", "commit": "c607be79c8eeaa5a5d7ac66421f8b5c51d936fe8" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" }
+}
