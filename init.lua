@@ -1,5 +1,7 @@
 require("config.lazy")
 
+--TODO some important shit
+
 vim.o.showmatch = true
 vim.o.ignorecase = true
 vim.o.mouse = v
@@ -11,6 +13,7 @@ vim.o.autoindent = true
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.number = true
+vim.o.syntax = enable
 vim.o.syntax = on
 vim.o.wildmode = longest,list 
 vim.o.mouse = a
