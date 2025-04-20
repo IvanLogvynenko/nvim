@@ -8,7 +8,21 @@ return {
         { "3rd/image.nvim", opts = {}},
     },
     config = function()
-        vim.keymap.set('n', '<leader>r', ':Neotree filesystem reveal right<CR>')
-    end,
+        vim.cmd ":Neotree filesystem reveal right"
+        vim.keymap.set(
+            'n', 
+            '<leader>r', 
+            function()
+                if vim.bo.filetype == "neo-tree" then
+                    vim.cmd "wincmd p"
+                else 
+                    vim.cmd ':Neotree filesystem reveal right'
+                end
+            end 
+        )
+        vim.keymap.set('n', '<leader>t', ':Neotree toggle<CR>')
+
+        vim.g.netrw = 1
+   end,
     lazy = false,
 }
