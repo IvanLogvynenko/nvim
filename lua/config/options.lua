@@ -6,12 +6,11 @@ vim.opt.showmatch = true
 vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.cmd "set noexpandtab"
 vim.opt.number = true
 vim.opt.syntax = on
 vim.opt.wildmode = longest,list 
-vim.opt.mouse = a
-vim.opt.clipboard = unnamedplus
+vim.opt.mouse = v
 vim.opt.cursorline = true
 

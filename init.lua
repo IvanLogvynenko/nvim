@@ -1,3 +1,9 @@
-require("config.remap")
+--Basic config
 require("config.options")
+require("config.remap")
+
+--Lazy
 require("config.lazy")
+
+--LSP
+
