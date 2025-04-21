@@ -7,10 +7,9 @@ vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.smartindent = true
-vim.cmd "set noexpandtab"
+vim.cmd("set noexpandtab")
 vim.opt.number = true
 vim.opt.syntax = on
-vim.opt.wildmode = longest,list 
+vim.opt.wildmode = longest
 vim.opt.mouse = v
 vim.opt.cursorline = true
-
