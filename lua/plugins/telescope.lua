@@ -15,11 +15,22 @@ return {
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
+			local actions = require("telescope.actions")
 			local telescope = require("telescope")
 			telescope.setup({
 				extensions = {
 					["ui-select"] = { require("telescope.themes").get_dropdown({}) },
 				},
+				defaults = {
+					mappings = {
+						n = {
+							["<S-Tab>"] = actions.move_selection_next,
+							["<Tab>"] = actions.move_selection_previous,
+							["<Space>"] = actions.toggle_selection,
+						}
+
+					}
+				}
 			})
 			telescope.load_extension("ui-select")
 		end,

@@ -9,26 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				automatic_installation = false,
-				ensure_installed = {
-					"lua_ls",
-					"clangd",
-					"bashls",
-					"cmake",
-					"dockerls",
-					"glsl_analyzer",
-					"gopls",
-					"gradle_ls",
-					"hyprls",
-					"jdtls",
-					"jsonls",
-					"remark_ls",
-					"nginx_language_server",
-					"pbls",
-					"pylsp",
-					"rust_analyzer",
-					"yamlls",
-				},
+				automatic_installation = true,
 			})
 		end,
 	},
@@ -115,7 +96,7 @@ return {
 			vim.keymap.set("n", "<leader>d", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-			vim.keymap.set({ "n", "v", "i" }, "<A-k>", vim.lsp.buf.code_action, {})
+			vim.keymap.set({ "n", "v", "i" }, "<A-,>", vim.lsp.buf.code_action, {})
 		end,
 	},
 }
