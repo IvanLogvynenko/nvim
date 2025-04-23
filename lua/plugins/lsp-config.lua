@@ -2,31 +2,56 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup()
+			require("mason").setup({
+				automatic_installation = true,
+				ensure_installed = {
+					"ast_grep",
+					"bashls",
+					"clang-format",
+					"clangd",
+					"cmake",
+					"codelldb",
+					"cpptools",
+					"dockerls",
+					"glsl_analyzer",
+					"gopls",
+					"gradle_ls",
+					"hyprls",
+					"jdtls",
+					"jsonls",
+					"lua_ls",
+					"nginx_language_server",
+					"pbls",
+					"prettier",
+					"pylsp",
+					"remark_ls",
+					"rust_analyzer",
+					"stylua",
+					"yamlls",
+				},
+			})
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup({
-				automatic_installation = true,
-			})
+			require("mason-lspconfig").setup()
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.clangd.setup({
-				capabilities = capabilities
-			})
+			for server, config in pairs(lspconfig) do
+				if type(config) == "table" and type(config.setup) == "function" then
+					config.setup({
+						capabilities = capabilities,
+					})
+				end
+			end
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
 				filetypes = { "dart" },
@@ -43,49 +68,6 @@ return {
 						showTodos = true,
 					},
 				},
-				on_attach = function(client, bufnr) end,
-			})
-			lspconfig.bashls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.cmake.setup({
-				capabilities = capabilities
-			})
-			lspconfig.glsl_analyzer.setup({
-				capabilities = capabilities
-			})
-			lspconfig.dockerls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.gradle_ls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.hyprls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.jdtls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.jsonls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.remark_ls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.nginx_language_server.setup({
-				capabilities = capabilities
-			})
-			lspconfig.pbls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities
-			})
-			lspconfig.yamlls.setup({
-				capabilities = capabilities
 			})
 
 			vim.diagnostic.config({

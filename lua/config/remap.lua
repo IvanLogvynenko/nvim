@@ -8,3 +8,6 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 vim.keymap.set("n", "<C-q>", ":qa<CR>")
 vim.keymap.set("n", "<C-w>", ":wa<CR>")
+
+vim.keymap.set("n", "<C-C>", ':"+y')
+vim.keymap.set("v", "<C-C>", ':"+y')

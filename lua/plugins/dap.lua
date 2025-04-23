@@ -7,8 +7,10 @@ return {
 				dependencies = {
 					"nvim-neotest/nvim-nio",
 					"leoluz/nvim-dap-go",
-				}
-			}
+					"nvim-java/nvim-java-dap",
+					"mfussenegger/nvim-dap-python",
+				},
+			},
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
@@ -29,9 +31,17 @@ return {
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
---			vim.keymap.set("n", "F5", dap.continue, {})
---			vim.keymap.set("n", "F5", dap.continue, {})
---			vim.keymap.set("n", "F5", dap.continue, {})
+
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = "codelldb",
+					args = { "--port", "${port}" },
+				},
+			} --			vim.keymap.set("n", "F5", dap.continue, {})
+			--			vim.keymap.set("n", "F5", dap.continue, {})
+			--			vim.keymap.set("n", "F5", dap.continue, {})
 		end,
 	},
 }
