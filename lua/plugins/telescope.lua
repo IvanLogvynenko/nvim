@@ -23,12 +23,16 @@ return {
 				},
 				defaults = {
 					mappings = {
+						i = {
+							["<S-Tab>"] = actions.move_selection_next,
+							["<Tab>"] = actions.move_selection_previous,
+							["<Space>"] = actions.toggle_selection,
+						},
 						n = {
 							["<S-Tab>"] = actions.move_selection_next,
 							["<Tab>"] = actions.move_selection_previous,
 							["<Space>"] = actions.toggle_selection,
 						}
-
 					}
 				}
 			})

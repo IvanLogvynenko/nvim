@@ -1,5 +1,15 @@
 return {
 	{
+		"jay-babu/mason-nvim-dap.nvim",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"williamboman/mason.nvim",
+		},
+		opts = {
+			handlers = {},
+		},
+	},
+	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			{
@@ -31,15 +41,7 @@ return {
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
-
-			dap.adapters.codelldb = {
-				type = "server",
-				port = "${port}",
-				executable = {
-					command = "codelldb",
-					args = { "--port", "${port}" },
-				},
-			} --			vim.keymap.set("n", "F5", dap.continue, {})
+			--			vim.keymap.set("n", "F5", dap.continue, {})
 			--			vim.keymap.set("n", "F5", dap.continue, {})
 			--			vim.keymap.set("n", "F5", dap.continue, {})
 		end,

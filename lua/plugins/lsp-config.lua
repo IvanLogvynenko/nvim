@@ -45,13 +45,15 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			for server, config in pairs(lspconfig) do
-				if type(config) == "table" and type(config.setup) == "function" then
-					config.setup({
-						capabilities = capabilities,
-					})
-				end
-			end
+			--	for server, config in pairs(lspconfig) do
+			--		print(server)
+			--		print(config)
+			--		if type(config) == "table" and type(config.setup) == "function" then
+			--			config.setup({
+			--				capabilities = capabilities,
+			--			})
+			--		end
+			--	end
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
 				filetypes = { "dart" },
@@ -69,7 +71,54 @@ return {
 					},
 				},
 			})
-
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.cmake.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.glsl_analyzer.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.gradle_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.hyprls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.jdtls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.jsonls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.remark_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.nginx_language_server.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pbls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.yamlls.setup({
+				capabilities = capabilities,
+			})
 			vim.diagnostic.config({
 				update_in_insert = true,
 				virtual_text = true,
