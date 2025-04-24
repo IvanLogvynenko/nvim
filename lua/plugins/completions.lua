@@ -41,4 +41,9 @@ return {
 			})
 		end,
 	},
+	{
+		--INFO save for later fun
+		"garymjr/nvim-snippets",
+		cond = false,
+	},
 }
