@@ -1,29 +1,21 @@
+--INFO contains all shit I want to try out without ruining general config
 return {
-		--{
-	--	"folke/snacks.nvim",
-	--	priority = 1000,
-	--	lazy = false,
-	--		opts = {
-	--		bigfile = { enabled = true },
-	--		dashboard = { enabled = true },
-	--		explorer = { enabled = true },
-	--		indent = { enabled = true },
-	--		input = { enabled = true },
-	--		notifier = {
-	--			enabled = true,
-	--			timeout = 3000,
-	--		},
-	--		picker = { enabled = true },
-	--		quickfile = { enabled = true },
-	--		scope = { enabled = true },
-	--		scroll = { enabled = true },
-	--		statuscolumn = { enabled = true },
-	--		words = { enabled = true },
-	--		styles = {
-	--			notification = {
-	--				-- wo = { wrap = true } -- Wrap notifications
-	--			},
-	--		},
-	--	},
-	--},
+	{
+		"folke/twilight.nvim",
+		cond = false,
+	},
+	{
+		"folke/ts-comments.nvim",
+		opts = {},
+		event = "VeryLazy",
+		enabled = vim.fn.has("nvim-0.10.0") == 1,
+		cond = false,
+		config = function()
+			--INFO comment
+		end,
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {},
+	},
 }

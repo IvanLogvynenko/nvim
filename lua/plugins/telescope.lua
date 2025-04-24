@@ -32,9 +32,9 @@ return {
 							["<S-Tab>"] = actions.move_selection_next,
 							["<Tab>"] = actions.move_selection_previous,
 							["<Space>"] = actions.toggle_selection,
-						}
-					}
-				}
+						},
+					},
+				},
 			})
 			telescope.load_extension("ui-select")
 		end,
