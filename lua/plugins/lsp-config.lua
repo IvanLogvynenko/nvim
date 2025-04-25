@@ -45,15 +45,6 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			--	for server, config in pairs(lspconfig) do
-			--		print(server)
-			--		print(config)
-			--		if type(config) == "table" and type(config.setup) == "function" then
-			--			config.setup({
-			--				capabilities = capabilities,
-			--			})
-			--		end
-			--	end
 			lspconfig.dartls.setup({
 				cmd = { "dart", "language-server", "--protocol=lsp" },
 				filetypes = { "dart" },
@@ -98,9 +89,6 @@ return {
 			lspconfig.hyprls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.jdtls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
@@ -128,7 +116,39 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 			vim.keymap.set({ "n", "v", "i" }, "<A-,>", vim.lsp.buf.code_action, {})
-			vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 		end,
+	},
+	{
+		"mfussenegger/nvim-jdtls",
+	--	ft = { "java" },
+	--	config = function()
+	--		local configuration = function()
+	--			local jdtls = require("jdtls")
+--
+	--			local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+	--			local root_dir = require("jdtls.setup").find_root(root_markers)
+--
+	--			local workspace_folder = vim.fn.stdpath("data")
+	--				.. "/jdtls-workspace/"
+	--				.. vim.fn.fnamemodify(root_dir, ":p:h:t")
+--
+	--			local config = {
+	--				cmd = {
+	--					"jdtls",
+	--					"-data",
+	--					workspace_folder,
+	--				},
+	--				root_dir = root_dir,
+	--				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	--			}
+--
+	--			jdtls.start_or_attach(config)
+	--		end
+	--		vim.api.nvim_create_autocmd("FileType", {
+	--			pattern = "java",
+	--			callback = configuration
+	--		})
+	--	end,
 	},
 }
