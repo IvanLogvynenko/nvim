@@ -9,6 +9,7 @@ vim.opt.incsearch = true
 vim.opt.smartindent = true
 vim.cmd("set noexpandtab")
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.syntax = on
 vim.opt.wildmode = longest
 vim.opt.mouse = v
