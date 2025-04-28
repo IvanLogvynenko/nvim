@@ -38,7 +38,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-			vim.keymap.set({ "n", "i" }, "<C-a>", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
+			vim.keymap.set({ "n", "i" }, "<C-Tab>", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 			vim.keymap.set({ "n", "i" }, "<C-j>", "<cmd>BufferPrevious<CR>")
 			vim.keymap.set({ "n", "i" }, "<C-k>", "<cmd>BufferNext<CR>")
 		end,

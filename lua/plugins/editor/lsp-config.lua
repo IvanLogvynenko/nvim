@@ -5,7 +5,6 @@ return {
 			require("mason").setup({
 				automatic_installation = true,
 				ensure_installed = {
-					"ast_grep",
 					"bashls",
 					"clang-format",
 					"clangd",
@@ -121,34 +120,17 @@ return {
 	},
 	{
 		"mfussenegger/nvim-jdtls",
-	--	ft = { "java" },
-	--	config = function()
-	--		local configuration = function()
-	--			local jdtls = require("jdtls")
---
-	--			local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
-	--			local root_dir = require("jdtls.setup").find_root(root_markers)
---
-	--			local workspace_folder = vim.fn.stdpath("data")
-	--				.. "/jdtls-workspace/"
-	--				.. vim.fn.fnamemodify(root_dir, ":p:h:t")
---
-	--			local config = {
-	--				cmd = {
-	--					"jdtls",
-	--					"-data",
-	--					workspace_folder,
-	--				},
-	--				root_dir = root_dir,
-	--				capabilities = require("cmp_nvim_lsp").default_capabilities(),
-	--			}
---
-	--			jdtls.start_or_attach(config)
-	--		end
-	--		vim.api.nvim_create_autocmd("FileType", {
-	--			pattern = "java",
-	--			callback = configuration
-	--		})
-	--	end,
+	},
+	{
+		"elmcgill/springboot-nvim",
+		depedencies = {
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-jdtls",
+			"nvim-tree/nvim-tree.lua",
+		},
+		config = function()
+			local springboot_nvim = require("springboot-nvim")
+			springboot_nvim.setup({})
+		end,
 	},
 }

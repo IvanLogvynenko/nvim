@@ -27,14 +27,12 @@ return {
 							["<S-Tab>"] = actions.move_selection_next,
 							["<Tab>"] = actions.move_selection_previous,
 							["<Space>"] = actions.toggle_selection,
-							["<CR>"] = actions.select_tab, -- Insert mode
 							["<C-t>"] = actions.select_tab,
 						},
 						n = {
 							["<S-Tab>"] = actions.move_selection_next,
 							["<Tab>"] = actions.move_selection_previous,
 							["<Space>"] = actions.toggle_selection,
-							["<CR>"] = actions.select_tab, -- Normal mode
 							["<C-t>"] = actions.select_tab,
 						},
 					},

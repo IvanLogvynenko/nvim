@@ -52,4 +52,15 @@ return {
 			},
 		},
 	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup({})
+			local comments = require("Comment.api")
+			vim.keymap.set("n", "<C-c>", comments.toggle.linewise.current, { noremap = true, silent = true })
+			vim.keymap.set("v", "<C-c>", function()
+				comments.toggle.linewise(vim.fn.visualmode())
+			end, { noremap = true, silent = true })
+		end,
+	},
 }
