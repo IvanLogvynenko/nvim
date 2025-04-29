@@ -14,3 +14,4 @@ vim.opt.syntax = on
 vim.opt.wildmode = longest
 vim.opt.mouse = v
 vim.opt.cursorline = true
+vim.opt.clipboard = "unnamedplus"
