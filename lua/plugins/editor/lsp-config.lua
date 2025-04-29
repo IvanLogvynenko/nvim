@@ -2,46 +2,42 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup({
-				automatic_installation = true,
-				ensure_installed = {
-					lsp = {
-						"bashls",
-						"clangd",
-						"cmake",
-						"codelldb",
-						"cpptools",
-						"dockerls",
-						"glsl_analyzer",
-						"gopls",
-						"gradle_ls",
-						"hyprls",
-						"jdtls",
-						"jsonls",
-						"lua_ls",
-						"nginx_language_server",
-						"pbls",
-						"pylsp",
-						"remark_ls",
-						"rust_analyzer",
-						"yamlls",
-					},
-					dap = {
-
-					},
-					formatter = {
-						"clang-format",
-						"prettier",
-						"stylua",
-					}
-				},
-			})
+			--install manually
+			--cpptools
+			--clang-format
+			--codelldb
+			--prettier
+			--stylua
+			require("mason").setup()
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"bashls",
+					"clangd",
+					"cmake",
+					"codelldb",
+					"cpptools",
+					"docker-compose-language-service",
+					"dockerls",
+					"glsl_analyzer",
+					"gopls",
+					"gradle_ls",
+					"hyprls",
+					"jdtls",
+					"jsonls",
+					"lua_ls",
+					"nginx_language_server",
+					"pbls",
+					"pylsp",
+					"remark_ls",
+					"rust_analyzer",
+					"yamlls",
+				},
+			})
 		end,
 	},
 	{
