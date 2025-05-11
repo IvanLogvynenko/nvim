@@ -29,7 +29,6 @@ return {
 					"jsonls",
 					"lua_ls",
 					"nginx_language_server",
-					"pbls",
 					"pylsp",
 					"remark_ls",
 					"rust_analyzer",
@@ -113,7 +112,7 @@ return {
 			})
 
 			vim.keymap.set("n", "<leader>d", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "fd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 			vim.keymap.set({ "n", "v", "i" }, "<A-,>", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})

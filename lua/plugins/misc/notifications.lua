@@ -4,4 +4,5 @@ return {
 		vim.notify = require("notify")
 	end,
 	opts = {},
+	cond = false,
 }

@@ -20,7 +20,7 @@ return {
 		},
 		config = function()
 			vim.cmd(":Neotree filesystem reveal right")
-			vim.keymap.set("n", "<leader>r", function()
+			vim.keymap.set("n", "<C-A-r>", function()
 				if vim.bo.filetype == "neo-tree" then
 					vim.cmd("wincmd p")
 				else
