@@ -24,7 +24,7 @@ return {
 					"jsonls",
 					"lua_ls",
 					"nginx_language_server",
-					"buf_ls",
+					"pbls",
 					"pylsp",
 					"remark_ls",
 					"rust_analyzer",
@@ -93,7 +93,7 @@ return {
 			lspconfig.nginx_language_server.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.buf_ls.setup({
+			lspconfig.pbls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({
