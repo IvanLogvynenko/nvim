@@ -2,17 +2,12 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			--install manually
-			--cpptools
-			--clang-format
-			--codelldb
-			--prettier
-			--stylua
 			require("mason").setup()
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		build = ":MasonInstall cpptools clang-format codelldb prettier stylua",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
