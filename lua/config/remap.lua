@@ -17,5 +17,3 @@ vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { noremap = true, silent = true 
 -- Move selection up/down in visual mode
 vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-
-vim.keymap.set({ "n", "i", "v" }, "<C-t>", "<cmd>terminal<CR>")
