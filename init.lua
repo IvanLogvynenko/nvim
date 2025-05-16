@@ -4,5 +4,3 @@ require("config.remap")
 
 --Lazy
 require("config.lazy")
-
---LSP
