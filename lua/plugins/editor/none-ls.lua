@@ -9,7 +9,7 @@ return {
 				null_ls.builtins.formatting.clang_format.with({
 					filetypes = {"cpp", "c", "java"}
 				}),
-				null_ls.builtins.formatting.dart_format,
+				-- null_ls.builtins.formatting.dart_format,
 			},
 		})
 
