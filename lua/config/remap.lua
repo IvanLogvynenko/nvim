@@ -8,7 +8,6 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 vim.keymap.set("n", "<C-q>", "<cmd>qa<CR>")
 vim.keymap.set("n", "<C-s>", "<cmd>wa<CR>")
-vim.keymap.set("n", "<C-w>", "<cmd>BufferClose<CR>")
 
 -- Move line up/down in normal mode
 vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { noremap = true, silent = true })
