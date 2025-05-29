@@ -40,23 +40,6 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			-- lspconfig.dartls.setup({
-				-- cmd = { "dart", "language-server", "--protocol=lsp" },
-				-- filetypes = { "dart" },
-				-- init_options = {
-					-- closingLabels = true,
-					-- flutterOutline = true,
-					-- onlyAnalyzeProjectsWithOpenFiles = true,
-					-- outline = true,
-					-- suggestFromUnimportedLibraries = true,
-				-- },
-				-- settings = {
-					-- dart = {
-						-- completeFunctionCalls = true,
-						-- showTodos = true,
-					-- },
-				-- },
-			-- })
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
