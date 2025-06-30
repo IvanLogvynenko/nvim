@@ -33,7 +33,7 @@ return {
 			harpoon:list():add()
 		end)
 		vim.keymap.set("n", "<leader>e", function()
-			harpoon:list():remove()
+			harpoon:list():clear()
 		end)
 
 		vim.keymap.set("n", "<leader>j", function()
