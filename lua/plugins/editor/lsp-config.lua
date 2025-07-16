@@ -26,7 +26,7 @@ return {
 					"nginx_language_server",
 					"pbls",
 					"pylsp",
-					"remark_ls",
+					"marksman",
 					"rust_analyzer",
 					"yamlls",
 				},
@@ -70,7 +70,7 @@ return {
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.remark_ls.setup({
+			lspconfig.marksman.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.nginx_language_server.setup({

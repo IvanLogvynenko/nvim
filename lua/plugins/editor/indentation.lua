@@ -1,15 +1,5 @@
 return {
 	{
-		"echasnovski/mini.indentscope",
-		version = false,
-		cond = false,
-		config = function()
-			require("mini.indentscope").setup({
-				symbol = "│",
-			})
-		end,
-	},
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		---@module "ibl"
@@ -41,5 +31,4 @@ return {
 			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 		end,
 	},
-
 }

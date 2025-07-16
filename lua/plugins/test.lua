@@ -1,26 +1,12 @@
 -- INFO: contains all shit I want to try out without ruining general config
 return {
+	{ "MeanderingProgrammer/render-markdown.nvim" },
 	{
-		"hrsh7th/cmp-path",
-		config = function()
-			local cmp = require("cmp")
-
-			cmp.setup({
-				sources = cmp.config.sources({
-					{ name = "path" },
-					-- other sources like:
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-				}),
-			})
-		end,
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+		opts = {
+			completions = { lsp = { enabled = true } },
+		},
 	},
-	{
-		"dstein64/vim-startuptime",
-		cmd = "StartupTime",
-		init = function()
-			vim.g.startuptime_tries = 10
-		end,
-	},
-	{ "elkowar/yuck.vim" },
+	{ "sitiom/nvim-numbertoggle" },
 }
