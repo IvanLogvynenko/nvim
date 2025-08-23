@@ -20,6 +20,7 @@ require("lazy").setup({
 		{ import = "plugins/editor" },
 		{ import = "plugins/appearence" },
 		{ import = "plugins/appearence/themes" },
+		-- { import = "plugins/appearence/themes/test" },
 		{ import = "plugins/misc" },
 	},
 	checker = { enabled = true },
