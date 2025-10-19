@@ -9,4 +9,5 @@ return {
 		},
 	},
 	{ "sitiom/nvim-numbertoggle" },
+	{ "Aietes/esp32.nvim", },
 }

@@ -36,55 +36,34 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
+		opts = function(_, opts)
+			local esp32 = require("esp32")
+			opts.servers = opts.servers or {}
+			opts.servers.clangd = esp32.lsp_config()
+			return opts
+		end,
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.cmake.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.glsl_analyzer.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.dockerls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gradle_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.hyprls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.marksman.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.nginx_language_server.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pbls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.yamlls.setup({
-				capabilities = capabilities,
-			})
+			-- local lspconfig = require("lspconfig")
+			vim.lsp.enable("lua_ls")
+			-- vim.lsp.enable("eslint_lsp")
+			-- vim.lsp.enable("eslint_d")
+			vim.lsp.enable("clangd")
+			vim.lsp.enable("bashls")
+			vim.lsp.enable("cmake")
+			vim.lsp.enable("glsl_analyzer")
+			vim.lsp.enable("dockerls")
+			vim.lsp.enable("gopls")
+			vim.lsp.enable("gradle_ls")
+			vim.lsp.enable("hyprls")
+			vim.lsp.enable("jsonls")
+			vim.lsp.enable("marksman")
+			vim.lsp.enable("nginx_language_server")
+			vim.lsp.enable("pbls")
+			vim.lsp.enable("rust_analyzer")
+			vim.lsp.enable("yamlls")
+
 			vim.diagnostic.config({
 				update_in_insert = true,
 				virtual_text = true,

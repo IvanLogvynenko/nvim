@@ -18,7 +18,7 @@ return {
 					"nvim-neotest/nvim-nio",
 					"leoluz/nvim-dap-go",
 					"nvim-java/nvim-java-dap",
-					"mfussenegger/nvim-dap-python",
+					-- "mfussenegger/nvim-dap-python",
 				},
 			},
 		},
