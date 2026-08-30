@@ -1,0 +1,6 @@
+require("config.keymaps")
+require("config.options")
+require("config.colorscheme")
+require("config.treesitter")
+require("config.autocomplete")
+require("config.diagnostics")
