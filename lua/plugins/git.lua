@@ -6,7 +6,7 @@ vim.pack.add({
 
 require("gitsigns").setup({
 	current_line_blame = true,
-	word_diff          = true,
+	-- word_diff          = true,
 })
 
 vim.keymap.set("n", "<leader>c", "<cmd>Gitsigns toggle_linehl<CR>")

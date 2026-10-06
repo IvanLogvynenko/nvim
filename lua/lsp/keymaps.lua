@@ -1,7 +1,7 @@
 local fzf = require('fzf-lua')
 
 vim.keymap.set("n", "<leader>d", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})

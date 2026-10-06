@@ -23,7 +23,7 @@ vim.opt.mouse = v
 vim.opt.number = true
 vim.opt.numberwidth = 4
 vim.opt.relativenumber = true
-vim.opt.spell = true
+-- vim.opt.spell = true
 
 -- Shell
 vim.opt.shell = "/bin/zsh"
