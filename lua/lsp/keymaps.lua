@@ -16,3 +16,5 @@ vim.keymap.set('n', 'gd', fzf.lsp_definitions, { desc = "Go to definition (fzf)"
 vim.keymap.set("n", "<leader>gt", fzf.lsp_typedefs, { desc = "Type definition (fzf)" })
 vim.keymap.set("n", "<leader>gr", fzf.lsp_references, { desc = "References (fzf)" })
 vim.keymap.set("n", "<leader>gi", fzf.lsp_implementations, { desc = "Implementation (fzf)" })
+
+vim.keymap.set("n", "C-L", ":lsp restart<CR>")
